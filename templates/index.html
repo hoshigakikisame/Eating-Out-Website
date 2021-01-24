@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EATINGOUT</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'fontawsome/css/all.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/TAjumbotron.css' %}">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
+
+  <style type="text/css">
+    body {
+      overflow-x: hidden;
+    }
+
+    .navbar-brand {
+      margin-left: 15px
+    }
+
+    .card-body {
+
+    }
+  </style>
+</head>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="height: 100px;">
+    <div class="container">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false     aria-label="Toggle navigation>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+  <div class="collapse navbar-collapse container" id="navbarSupportedContent" style="margin-left: 850px;">
+    <ul class="navbar-nav mr-auto"> 
+        <a class="btn btn-primary btn-lg bg-transparent" href="{% url 'login' %}" role="button" style="margin-left: 100px; height: 40px; text-align: center; border: inline; width: 65px;font-size: 16px;padding-left: 14px;padding-top: 7px; border-color: white;">Login</a>
+      </ul>
+       </div>
+    </nav>
+    <div class="jumbotron" style="text-align:center; margin-top: -8%; background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({$ static 'img/landing3.jpg' %}); background-size: cover;height: 700px; margin-right: 0;">
+    <h1 style="color: white; margin-top: 35vh;  font-family: 'Amatic SC', cursive ;margin-right: 70vw; font-size: 70px;">EATING OUT</h1>
+    <h5 style="color: white; margin-right: 135vh;font-family: 'Amatic SC', cursive; font-family: 'Barlow Semi Condensed', sans-serif; margin-top: vh;">JANGAN LUPA MAKAN MAKAN</h5>   
+
+
+
+    </div>
+
+<div style="margin-bottom: 30vh;"> 
+
+
+<div class="row" style="margin-top: 15vh; margin-left: 8vw;">
+  <div>
+    <img src="{% static 'img/welcome.jpg'%}" style="width: 40vw; height: 50vh; border-radius: 20px; visibility: visible; animation-duration: 1s; animation-delay: 0.2s; ">
+  </div>
+
+<div style="margin-left: vw; width: 43vw;">
+  <h1 style="color: black; text-align: center; font-family: 'Amatic SC', cursive;">Welcome</h1>
+  <hr style="background-color: red; width: 12pc; height: 2px; border-radius: 5px;">
+  <p style="width: 30vw; margin-top: 5vh; text-align: center; margin-left: 6.5vw; border-radius: 1px;">Cari makanan favorit anda disini dan anda pun bisa mendaftarkan restorant anda disini.</p><br>
+
+</div>
+
+</div>
+
+<div class="row" style="margin-top: 15vh; margin-left: 8vw;">
+
+<div style="margin-left: vw; width: 43vw; ">
+  <h1 style="color: black; text-align: center; font-family: 'Amatic SC', cursive; ">ABOUT</h1>
+   <hr style="background-color: red; width: 12pc; height: 2px; border-radius: 5px;">
+  <p style="width: 30vw; margin-top: 5vh; text-align: center; margin-left: 6.5vw;">Eating Out adalah website penyedia info tentang restorant dan menu yang ada didalam nya</p><br>
+</div>
+<div>
+    <img src="{% static 'img/about.jpg' %}" style="width: 40vw; height: 50vh; border-radius: 20px;">
+</div>
+</div>
+
+<div class="row" style="margin-top: 15vh; margin-left: 8vw;">
+  <div>
+    <img src="{% static 'img/visi.jpg' %}" style="width: 40vw; height: 50vh; border-radius: 20px;">
+  </div>
+
+<div style="margin-left: vw; width: 43vw; ">
+  <h1 style="color: black; text-align: center; font-family: 'Amatic SC', cursive;">VISI</h1>
+   <hr style="background-color: red; width: 12pc; height: 2px; border-radius: 5px;">
+  <p style="width: 30vw; margin-top: 5vh; text-align: center; margin-left: 6.9vw;">Menjadi Website peneydia info restorant dan makanan terbaik di kelasnya</p><br>
+
+</div>
+</div>
+
+
+<div class="row" style="margin-top: 15vh; margin-left: 8vw;">
+
+<div style="margin-left: vw; width: 43vw; ">
+  <h1 style="color: black; text-align: center; font-family: 'Amatic SC', cursive; ">MISI</h1>
+   <hr style="background-color: red; width: 12pc; height: 2px; border-radius: 5px;">
+  <p style="width: 30vw; margin-top: 5vh; text-align: center; margin-left: 6.9vw;">Eating Out adalah website penyedia info tentang restorant dan menu yang ada didalam nya</p><br>
+</div>
+<div>
+    <img src="{% static 'img/misi2.jpg' %}" style="width: 40vw; height: 50vh; border-radius: 20px;">
+</div>
+</div>
+
+</div>
+
+
+  <footer class="text-white p-4 mt-3" style="width: 100%;height: 30vh; background-color:  #9b2106 ;">
+    <div class="row" style="margin: auto;">
+      <div class="col-md-6" style="margin-left: 23vw;">
+        <h5 style="width: 100%;text-align: center;">Our Socials :</h5><br>
+        <ul>
+          <div class="row">
+          <h2><li style="margin-left: 180.5px; list-style: none;">
+            <a style="color: white;" href="https://instagram.com/rvlrmdh?igshid=1o3h6hsqc2wec"><i class="fab fa-instagram"></a></i></li></h2>
+          <h2><li style="margin-left: 60px; list-style: none;">
+            <a style="color: white;" href="http://wa.me/085780395266"><i class="fab fa-whatsapp"></a></i></li></h2>
+          <h2><li style="margin-left: 60px; list-style: none;">
+            <a style="color: white;" href="mailto:ripallez@gmail.com"><i class="fas fa-envelope-square"></a></i></li></h2>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright text-center font-weight-bold  p-2" style="width: auto;margin-left: -1.5vw; background-color:  #9b2106 ; height: -10vh; margin-top: -4vh">
+    <p style="color: white;">Developed by Ripal Copyright 2020</p>
+    
+  </div>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EATINGOUT</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'fontawsome/css/all.min.css' %}">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="" style="overflow-x: hidden;">
+  {% include "navbar.html" %}
+  {% if resto_user.milik == request.user %}
+    
+  <a href="{% url 'tambahMenu' %}">
+    <button type="button" style="bottom: 5%; right: 5%; height: 57px;position: fixed; z-index: 999; border-radius: 30px" class="btn btn-light shadow">
+      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus" fill="#bf3011" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg> Tambah Menu
+    </button>
+  </a>
+  {% endif %}
+  <div class="container">
+    <hr style="background-color: #bf3011; width: 85vw; margin-top: 3vw; height: 5px; border-radius: 5px; ">
+
+    <div class="card mb-3" style="max-width: ; border: none">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{ resto_user.foto_resto.url }}" style="object-fit: cover; height: 300px; width: 100%" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">{{ resto_user.nama_resto }}</h1>
+            <p class="card-text lead">{{ resto_user.alamat }}</p>
+            <p class="card-text lead">{{ resto_user.notlp }}</p>
+            {% if resto_user.milik == request.user %}
+            <p class="card-text"><a href="{% url 'resto_status' resto_user.id %}" class="btn text-light" style="background-color: #bf3011">{{resto_user.status}}</a></p>
+            {% else %}
+            <p class="card-text">{{resto_user.status}}</p>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr style="background-color: #bf3011; width: 85vw;  height: 5px; border-radius: 5px; ">
+    <div class="card mb-3" style="max-width: ; border: none">
+      <div class="row no-gutters">
+        <div class="col-md-8">
+          <div class="card-body" style="margin: auto"><br><br><br><br>
+            <h1 style="margin: auto" class="display-4 card-title">Menu Unggulan</h1>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img src="{{ resto_user.foto_menu.url }}" style="object-fit: cover; height: 300px; width: 100%" class="card-img" alt="...">
+        </div>
+      </div>
+    </div>
+
+    {% if menu_resto %}
+    <hr style="background-color: #bf3011; width: 85vw; margin-top: 3vw; height: 5px; border-radius: 5px; ">
+    <br>
+    <h1 align="center" class="display-4">Semua Menu</h1><br>
+    <table class="table table-hover" style="width: 100%;">
+      <thead style="background-color: #bf3011">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Menu</th>
+          <th scope="col">Harga</th>
+          <th scope="col">Status</th>
+          {% if resto_user.milik == request.user %}
+          <th scope="col">Kelola</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody style="">
+        {% for menu in menu_resto %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{menu.nama_menu}}</td>
+          <td>Rp {{menu.harga}}</td>
+          {% if resto_user.milik == request.user %}
+          <td><a href="{% url 'rubah_menu' menu.id %}">{{menu.status}}</a></td>
+          {% else %}
+          <td>{{menu.status}}</td>
+          {% endif %}
+          {% if resto_user.milik == request.user %}
+          <td><a href="{% url 'updateMenu' menu.id %}">Edit</a> | <a href="{% url 'deleteMenu' menu.id %}">Delete</a></td>
+
+          {% endif %}
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+    <br><br><br><br><br><br><br><br>
+    {% else %}
+    <hr style="background-color: #bf3011; width: 85vw;  height: 5px; border-radius: 5px; ">
+    <br><br><br>
+    <h1 align="center">Menu Belum Tersedia</h1>
+    <br><br><br><br><br><br><br><br>
+    {% endif %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</div>
+</body>
+</html>

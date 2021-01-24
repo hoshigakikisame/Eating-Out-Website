@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-top: 5px solid #bf3011;">
+  <a class="navbar-brand" href="{% url 'index' %}" style=" margin-left: 5.5vw; font-family: 'Amatic SC', cursive ; font-size: 35px;">EATING OUT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" action="/search/" method="get">
+      <input class="search-input form-control mr-sm-2" style="margin-left: 48vw;position: relative;" type="search" name="query" value="{{q}}" placeholder="Search" aria-label="Search" required>
+      <button class="btn text-light" style="background-color: #bf3011">Search</button>
+    </form>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown" style="margin-left: 1vw;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ request.user }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"></a>
+          {% if not request.user.restorant.exists %}
+          <a class="dropdown-item" href="{% url 'daftarresto' %}">Tambah Resto</a>
+          {% else %}
+          <a class="dropdown-item" href="{% url 'resto' request.user.id %}">Resto Saya</a>
+          {% endif %}
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item bg-danger text-light" href="{% url 'logout' %}">Logout</a>
+        </div>
+      </ul>
+    </div>
+  </nav>

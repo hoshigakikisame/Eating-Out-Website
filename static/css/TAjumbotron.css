@@ -1,0 +1,25 @@
+.display-4
+{
+	margin-top: 10vh;
+}
+.jumbotron .btn
+{
+	border-radius: 25px;
+	width: 200px;
+	border: none;
+	margin-top: 100px; 
+}
+.jumbotron p
+{
+	margin-top: 40px;
+}
+.jumbotron
+{
+ 	text-align:center; 
+ 	margin-top: -8%; 
+ 	background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/landing3.jpg); 
+ 	background-size: cover;height: 700px;
+ 	margin-right: 0
+
+}
+

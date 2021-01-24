@@ -1,0 +1,148 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body
+{
+	background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/TA.jpg);
+	background-size: cover;
+}
+.header
+{
+	color: white;
+	height: 75px;
+}
+.header p
+{
+	font-size: 30px;
+	margin-top: 10px;
+	margin-left: 30px;
+	font-family: Arial;
+}
+.nav {
+	position: fixed;
+	width: 100%;
+	margin-top: 20px;
+	top: 0;
+	float: right;
+}
+
+.nav ul li {
+	font-size: 20px;
+	float: right;
+	margin-left: 35px;
+	font-family: monospace;
+}
+.nav ul a
+{
+	color: white;
+	font-family: monospace;
+	transition: all .6s;
+}
+.nav li {
+	display: inline-block;
+}
+.nav ul {
+	margin-right: 80px;
+}
+.nav ul a:hover
+{
+	box-sizing: border-box;
+	background-color: #696969;
+	padding: 10px;
+	border-radius: 5px;
+}
+.login {
+	width: 400px;
+	height: 350px;
+	position: absolute;
+	text-align: center;
+	box-sizing: border-box;
+	box-shadow: 0 5px 15px 5px black;
+	background: transparent;
+	margin-left: 35%;
+	margin-top: 115px;
+	border-radius: 5px; 
+}
+.login p {
+	color: white;
+	font-size: 35px;
+	font-family: monospace;
+	margin-top: 5px;
+}
+.login form {
+	margin-top: 45px;
+}
+form #user {
+	background-color: transparent;
+	color: white;
+	position: absolute;
+	margin-top: 5px;
+	font-size: 15px;
+	width: 300px;
+	border-radius: 30px;
+	line-height: 30px;
+	padding-left: 14px;
+	left: 50px;
+	padding-bottom: 3px;
+	box-sizing: border-box;
+	border-color: lightgrey;
+}
+form #name
+{
+	color: white;
+	position: absolute;
+	text-align: center;
+	right: 175px;
+	top: 70px;
+	font-size: 17px;
+}
+form #pass {
+	background-color: transparent;
+	font-size: 16px;
+	color: white;
+	position: absolute;
+	top: 170px;
+	width: 300px;
+	left: 50px;
+	right: 50px;
+	line-height: 30px;
+	border-radius: 30px;
+	padding-left: 10px;
+	padding-bottom: 3px;
+}
+form #word {
+	color: white; 
+	position: absolute;
+	text-align: center;
+	top: 155px;
+	right: 175px;
+}
+#blur {
+	width: 400px;
+	height: 350px;
+	position: absolute;
+	margin-left: 35%;
+	margin-top: 115px;
+	background-color: black;
+	opacity: .7;
+	z-index: -1;
+	filter: blur(3px);
+}
+.submit 
+{
+	padding: 10px 30px;
+	color: #fff;
+	border-radius: 4px;
+	border: none;
+	background-color: green;
+	margin-top: 150px;
+	cursor: pointer;
+}
+#navbarsupport
+{
+	margin-left: 100vw;
+}
